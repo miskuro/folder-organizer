@@ -1,5 +1,5 @@
 # folder-organizer
 it organizes files ye👍
 
-so it u enter the names of the folders u wanna make, then u enter the .extension for each one (.txt, .png ...)
-and then the code does the stuff
+just run the code and it will organize the files for you, if you wanna make unique folder names, extensions...
+just head to the 'organizers.json' file and edit it for your prefrences, and be carefull to add the . before each extension, commas, brackets...
