@@ -1,0 +1,1 @@
+both the script and the json should be in the same directory
