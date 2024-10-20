@@ -2,9 +2,10 @@ import os
 import shutil
 import time
 import json
+import sys
 
 
-directory = os.getcwd()
+directory = os.path.dirname(os.path.abspath(__file__))
 
 def type(text):
     for char in text:
@@ -12,14 +13,18 @@ def type(text):
         time.sleep(0.008)
 
 
-type("the folders will be created from 'organizers.json' so if you wanna change something, head to the json\n")
-type("and change to your preferences")
+type("INFO : the folders will be created from 'organizers.json' so if you wanna change something, head to the json\n")
+type("and change to your preferences \n")
 
-with open ('organizers.json', 'r') as file:
-    automatiqueManagement = json.load(file)
-    json_path = os.path.join(directory, "organizers.json")
+try:
+    with open ('organizers.json', 'r') as file:
+        automatiqueManagement = json.load(file)
+        json_path = os.path.join(directory, "organizers.json")
+except FileNotFoundError:
+    type("ERROR : the json file is not there, make sure both the script and the json file are in the same directory")
+    sys.exit(1)
 
-
+script_path = os.path.join(directory, "fileOrganizer.py")
 
 
 def organize_files():
@@ -37,7 +42,7 @@ def organize_files():
             file_path = os.path.join(directory, file)
 
             
-            if file_extension in extensions and file_path != json_path:
+            if file_extension in extensions and file_path != json_path and file_path != script_path:
                 destination_folder = os.path.join(folder_path, file)
                 shutil.move(file_path, destination_folder)
                 print(f"Moved: {file} to {folder_path}")
