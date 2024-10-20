@@ -1,0 +1,9 @@
+
+{
+"sound": [".mp3", ".mov", ".wav", ".ogg"],
+"image": [".jpg", ".png", ".gif", ".bmp", ".jpeg"],
+"video": [".mp4", ".avi", ".mkv"],
+"archives": [".rar", ".zip", ".7z", ".gz"],
+"programs": [".exe"],
+"documents": [".txt", ".pdf", ".doc", ".json"]
+}
